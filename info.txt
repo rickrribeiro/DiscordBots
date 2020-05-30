@@ -1,0 +1,4 @@
+ID: 716383320665096233
+LINK:https://discord.com/api/oauth2/authorize?client_id=716383320665096233&scope=bot&permissions=1
+TOKEN:
+IMAGE:

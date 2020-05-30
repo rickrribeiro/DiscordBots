@@ -1,0 +1,22 @@
+{
+  "name": "allodsbot",
+  "version": "1.0.0",
+  "description": "bot discord",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rickrribeiro/AllodsBot.git"
+  },
+  "author": "Rickbahia",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rickrribeiro/AllodsBot/issues"
+  },
+  "homepage": "https://github.com/rickrribeiro/AllodsBot#readme",
+  "dependencies": {
+    "discord.js": "^12.2.0"
+  }
+}

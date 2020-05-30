@@ -23,6 +23,11 @@ client.on("message", msg =>{
         
     }
   
+
+    if(msg.content.toLowerCase() == "rick?"){
+        msg.reply("Eai!\n1.Pergunta ai quem é o top druida do svr.\n")
+    }
+
   // console.log(msg.content.toLowerCase())
 })
 //end funcionalidades

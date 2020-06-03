@@ -24,7 +24,7 @@ const creds = require('./spreadsheet_secret.json');
 
 const SPREADSHEET_ID = ``
 async function accessSpreadsheet() {
-  dkpList = ["\nDKPetas"]
+  dkpList = ["\n***DKPetas***"]
   const doc = new GoogleSpreadsheet(SPREADSHEET_ID)
   await promisify(doc.useServiceAccountAuth)(creds)
   const info = await promisify(doc.getInfo)()

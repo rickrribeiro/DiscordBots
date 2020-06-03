@@ -1,5 +1,5 @@
 var Discord = require("discord.js");
-
+var Dkp = require("./spreadsheet")
 const client = new Discord.Client();
 
 //funcionalidades
@@ -8,7 +8,7 @@ client.on("ready", ()=>{
     console.log("Corram que o RickBahia ta chegando!")
 })
 
-client.on("message", msg =>{
+client.on("message", async msg =>{
     //verifica se chamou o bot pra n floodar
     if(msg.content.toLowerCase().includes("rick,") && msg.author.tag != client.user.tag){ 
         //mostra o melhor druida
@@ -27,8 +27,12 @@ client.on("message", msg =>{
         }
         // mostra o DKP
         if(msg.content.toLowerCase().includes("dkp")){
-            msg.reply("Ta apressado pra que? To fazendo isso sozinho. Se vesgo mandar cash eu faço mais rapido!")
-
+            
+            //console.log(Dkp.getDkp())
+            //console.log(await Dkp.getDkp())
+            //console.log(await Dkp.getDkpTest())
+           // msg.reply(Dkp.getDkp())
+            msg.reply(await Dkp.getDkp())
         }
         //mostra as build
         if(msg.content.toLowerCase().includes("build")){

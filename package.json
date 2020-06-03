@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/rickrribeiro/AllodsBot#readme",
   "dependencies": {
-    "discord.js": "^12.2.0"
+    "discord.js": "^12.2.0",
+    "google-spreadsheet": "^2.0.3"
   }
 }

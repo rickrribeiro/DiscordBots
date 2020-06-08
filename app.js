@@ -1,5 +1,5 @@
 var Discord = require("discord.js");
-var Dkp = require("./spreadsheet")
+var Sheets = require("./spreadsheet")
 const client = new Discord.Client();
 
 //funcionalidades
@@ -8,7 +8,7 @@ client.on("ready", ()=>{
     //client.channels ('717622566633603081').sendMessage()
     //client.channels.get('717622566633603081').send('Hello here!')
     
-    const channel = client.channels.cache.get('');
+    const channel = client.channels.cache.get('717622566633603081');
     channel.startTyping()
     channel.stopTyping()
     channel.send('Corram que o RickBahia ta chegando!');
@@ -41,11 +41,13 @@ client.on("message", async msg =>{
         if(msg.content.toLowerCase().includes("dkp")){
             msg.channel.startTyping()
             msg.channel.stopTyping()
-            //console.log(Dkp.getDkp())
-            //console.log(await Dkp.getDkp())
-            //console.log(await Dkp.getDkpTest())
-           // msg.reply(Dkp.getDkp())
-            msg.reply(await Dkp.getDkp())
+         
+           if(msg.content.toLowerCase().includes("alfa")){
+            msg.reply(await Sheets.getDkp(true))
+           }else{
+            msg.reply(await Sheets.getDkp(false))
+           }
+            
         }
         //mostra as build
         if(msg.content.toLowerCase().includes("build")){
@@ -60,19 +62,23 @@ client.on("message", async msg =>{
             }
         }
         //mostra addons
-        if(msg.content.toLowerCase().includes("addons")){
-          
+        if(msg.content.toLowerCase().includes("addons") && !msg.content.toLowerCase().includes("sug") ){
             msg.reply("\nTa apressado pra que? To fazendo isso sozinho. Se vesgo mandar cash eu faço mais rapido!")
         }
         //avisos
         if(msg.content.toLowerCase().includes("avisos")){
-           
-            msg.reply("\nEnviem 5kc para o RickBahia")
+            msg.channel.startTyping()
+            msg.channel.stopTyping()
+            //msg.reply("\nEnviem 5kc para o RickBahia")
+            msg.reply(await Sheets.getAvisos())
         }
         //horarios
         if(msg.content.toLowerCase().includes("horarios")){
-         
-            msg.reply("\nSarn quarta 05/06 às 19 horas!\nDominio Domingo 20 às 20 horas!")
+            msg.channel.startTyping()
+            msg.channel.stopTyping()
+            
+            msg.reply(await Sheets.getHorarios())
+            //msg.reply("\n\nDominio Domingos 20 às 20 horas!")
         }
         //tutoriais
         if(msg.content.toLowerCase().includes("tutoriais")){
@@ -85,7 +91,37 @@ client.on("message", async msg =>{
             msg.reply("\nQuer foto da minha rola é???\nManda cash ai que eu mando!")
         }
         
-
+        if(msg.content.toLowerCase().includes("sugaddons")){
+           var aux= msg.content.toLowerCase().split("sugaddons")
+           var verify =false
+          if(aux[1].length > 4){
+               verify = await Sheets.Solicitar(aux[1])
+          }else{
+              msg.reply("Digite após sugaddons")
+          }
+          if(verify){
+              msg.reply("Solicitação feita com sucesso!")
+          }else{
+              msg.reply("Erro na Solicitação!")
+          }
+        }
+        
+        
+        if(msg.content.toLowerCase().includes("sugbuild")){
+            var aux= msg.content.toLowerCase().split("sugbuild")
+            var verify =false
+           if(aux[1].length > 4){
+                verify = await Sheets.Solicitar(aux[1])
+           }else{
+               msg.reply("Digite após sugbuild")
+           }
+           if(verify){
+               msg.reply("Solicitação feita com sucesso!")
+           }else{
+               msg.reply("Erro na Solicitação!")
+           }
+         }
+         
 
     }
     
@@ -94,18 +130,21 @@ client.on("message", async msg =>{
      
         msg.reply(`Eai noobs! Para eu não ficar floodando o chat, antes de cada mensagem coloque "Rick" e faça sua pergunta!
                     1.Melhor druida
-                    2.DKP
-                    3.Build NomeDaClasse
+                    2.DKP (Ordenado pela quantidade- adicionar "alfa" no final pra ir por ordem alfabética)
+                    3.Build "NomeDaClasse"
                     4.Addons
                     5.Horarios
                     6.Avisos
                     7.Tutoriais
-                    69.Nudes`)
+                    8.SugAddons "link-descrição"
+                    9.SugBuild "link-descrição"
+                    69.Nudes
+                    Temporariamente irei deixar o "sugAddons" e "sugBuild" pra galera enviar e preencher. Envia no formato link-descrição ex: rick sugaddons https://allodsmaniacs.com-SiteAllods`)
     }
 
-   
+   // 8.Solicitacoes "solicitação aqui" (Denuncias, Solicitações ou Sugestões)
   // console.log(msg.content.toLowerCase())
   
 })
 //end funcionalidades
-client.login("NzE2MzgzMzIwNjY1MDk2MjMz.XtLA3A.A-dqz8L3HvdnFRUB8B-2U0Mq1yY")
+client.login("")

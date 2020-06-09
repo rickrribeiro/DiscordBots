@@ -43,9 +43,20 @@ client.on("message", async msg =>{
             msg.channel.stopTyping()
          
            if(msg.content.toLowerCase().includes("alfa")){
+            console.log("1")
             msg.reply(await Sheets.getDkp(true))
            }else{
-            msg.reply(await Sheets.getDkp(false))
+            var aux= msg.content.toLowerCase().split("dkp")
+            console.log(aux)
+            if(aux[1].length<4){
+                console.log("2")
+                msg.reply(await Sheets.getDkp(false))
+            }else{
+                console.log("3")
+               // console.log(await Sheets.getDkpPlayer(aux[1].trim()))
+                msg.reply(await Sheets.getDkpPlayer(aux[1].trim()))
+            }
+           
            }
             
         }

@@ -32,7 +32,7 @@ async function getDkp(alfabetica) {
   const docDKP = new GoogleSpreadsheet(spreadsheetDKP_secret)
   await promisify(docDKP.useServiceAccountAuth)(creds)
   const info = await promisify(docDKP.getInfo)()
-  
+  console.log("aqqqqqqqq")
   const sheet = info.worksheets[0]
   const rows = await promisify(sheet.getRows)({
     offset: 0,
@@ -56,6 +56,33 @@ async function getDkp(alfabetica) {
   
   return dkpList
 
+}
+
+async function getDkpPlayer(name) {
+ console.log("aqq")
+  const docDKP = new GoogleSpreadsheet(spreadsheetDKP_secret)
+  await promisify(docDKP.useServiceAccountAuth)(creds)
+  const info = await promisify(docDKP.getInfo)()
+  
+  const sheet = info.worksheets[0]
+  const rows = await promisify(sheet.getRows)({
+    offset: 0,
+    limit: 999,
+    orderby: 'col2'
+  })
+  var aux = "Player não encontrado!"
+  rows.forEach(element => {
+    
+    if(element.membro.toLowerCase() == name.toLowerCase()){
+      
+      aux= `${element.membro} - ${element.dkp}`
+    
+    }
+    
+  // console.log(dkpList)
+  });
+  
+  return aux
 }
 
 async function getAvisos() {
@@ -154,5 +181,6 @@ module.exports= {
   getDkp : getDkp,
   getAvisos:getAvisos,
   getHorarios: getHorarios,
-  Solicitar:Solicitar
+  Solicitar:Solicitar,
+  getDkpPlayer:getDkpPlayer
 }

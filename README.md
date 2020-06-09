@@ -1,4 +1,4 @@
 # AllodsBot
 bot discord
-
-testando windows
+para rodar:
+# node app.js

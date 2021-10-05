@@ -38,4 +38,4 @@ client.on("message", async msg =>{
     }
 })
 //end funcionalidades
-client.login("ODk1MDc2NTU1NDAxODgzNjcw.YVzTAA.zkkd4Bw5o9q-X4Mq18nwtPW6-us")
+client.login("")

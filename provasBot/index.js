@@ -20,26 +20,26 @@ client.on("message", async msg =>{
     if(msg.author=='895076555401883670'){
         return 0
     }
-    if(msg.content.toLowerCase() == "?prova help"){
-        msg.reply(`\nUtilize o comando '?prova questoes' para listar as questoes ou "?prova questao numero" para ver a resposta!`)
-    }else if(msg.content.toLowerCase() == "?prova questoes"){
+    if(msg.content.toLowerCase() == "?RicardoEhLindo help"){
+        msg.reply(`\nUtilize o comando '?RicardoEhLindo questoes' para listar as questoes ou "?RicardoEhLindo questao numero" para ver a resposta!`)
+    }else if(msg.content.toLowerCase() == "?RicardoEhLindo questoes"){
         msg.reply(`\nCalma rpz ta com pressa é? Ainda nem começou a prova`)
-    }else if(msg.content.toLowerCase().includes('?prova questao')){
+    }else if(msg.content.toLowerCase().includes('?RicardoEhLindo questao')){
         msg.reply(`\nQuestão não cadastrada!`)
-    }else if(msg.content.toLowerCase().includes('?prova')){
-        msg.reply('\nNão entendi! Joga um ?prova help ai p ver como usar')
+    }else if(msg.content.toLowerCase().includes('?RicardoEhLindo')){
+        msg.reply('\nNão entendi! Joga um ?RicardoEhLindo help ai p ver como usar')
     }
-    // else if(msg.content.toLowerCase() == "?prova lista"){
+    // else if(msg.content.toLowerCase() == "?RicardoEhLindo lista"){
     //     let str='';
   
     //     db.exams.forEach((el, i)=>{
     //         str+=`\n${i+1}. ${el.name}`
     //     })
     //     msg.reply(str)
-    // }else if(msg.content.toLowerCase().includes("?prova adicionar")){
+    // }else if(msg.content.toLowerCase().includes("?RicardoEhLindo adicionar")){
     //     try{
 
-    //         let name = msg.content.toLowerCase().split("?prova adicionar ")[1]
+    //         let name = msg.content.toLowerCase().split("?RicardoEhLindo adicionar ")[1]
     //         if(name){
     //             db.exams.push({name:name,questions:[]})
     //             fs.writeFile('./provas.json', JSON.stringify(db), (err) => {
@@ -56,10 +56,10 @@ client.on("message", async msg =>{
     //         console.log(err);
     //         msg.reply("Deu erro! Fale com <@221457741779173376> p saber ql foi")
     //     }
-    // }else if(msg.content.toLowerCase().includes("?prova questoes")){
+    // }else if(msg.content.toLowerCase().includes("?RicardoEhLindo questoes")){
     //     try{
             
-    //         let name = msg.content.toLowerCase().split("?prova questoes ")[1].split(" ")[0]
+    //         let name = msg.content.toLowerCase().split("?RicardoEhLindo questoes ")[1].split(" ")[0]
             
             
     //         let exam;

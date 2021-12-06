@@ -1,0 +1,36 @@
+{
+    "questions":[
+        {
+            "statement": "Em relação ao controle de acesso em sistemas operacionais do tipo UNIX, faz-se uso de uma lista de controle de acesso (ACL). Em relação a esta lista (ACL), avalie as afirmações abaixo:",
+            "answer": "I, II, III e IV"
+        },
+        {
+            "statement": "Um ataque é o ato de utilizar (ou explorar) uma vulnerabilidade para violar uma propriedade de segurança do sistema. Em relação a estas propriedades, avalie as afirmações abaixo",
+            "answer": "II e III"
+        },
+        {
+            "statement": "A segurança de um sistema de computação pode ser expressa através de um conjunto específico de propriedades. Em relação a estas propriedades, avalie as afirmações abaixo",
+            "answer": "I"
+        },
+        {
+            "statement": "Em relação ao uso de criptografias simétricas e assimétricas, assinale a afirmação CORRETA:",
+            "answer": "A criptografia simetrica tem o mesmo nivel de segurança... || O outro tipo é a do julio cesar"
+        },
+        {
+            "statement": "Em relação à tradução de um endereço lógico para o endereço físico correspondente na memória virtual por páginas, A MMU (Memory Management Unit - Unidade de Gerenciamento de memória) tem papel fundamental. Considerando este cenário, avalie as afirmações abaixo:",
+            "answer": "I, II, III, IV"
+        },
+        {
+            "statement": "Para minimizar a ocorrência de fragmentação externa, cada pedido de alocação pode ser analisado para encontrar a área de memória livre que melhor o atenda. Para esta finalidade, existem  estratégias diferentes de alocação. ",
+            "answer": "I, II, III, IV"
+        },
+        {
+            "statement": "Em relação à memória por segmentos, qual das opções a seguir apresenta a afirmação correta:",
+            "answer": "A memória virtual por segmentos é uma extensão da tradução por partições, na qual as seções de memória do processo (TEXT, DATA, etc.) são mapeadas em áreas separadas namemória física."
+        },
+        {
+            "statement": "A organização da memória por segmentos  é uma das opções de uso da memória em Sistemas Operacionais. Considerando este cenário, avalie as afirmações abaixo:",
+            "answer": "I, II, III, IV"
+        }
+    ]
+}
